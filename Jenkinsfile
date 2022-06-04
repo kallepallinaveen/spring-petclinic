@@ -6,7 +6,7 @@ pipeline {
 
         stage("Build"){
             steps {
-                sh "./mvnw package"
+                sh "./mvnw clean package"
             }
         }
         stage("Run Unit-Tests"){
@@ -14,10 +14,8 @@ pipeline {
                 sh "./mvnw test"
             }
         }
-        stage("Code Analysis"){
-            steps {
-                echo "Run Code Analysis"
-            }
+        stage("codeAnalysis"){
+            
         }
         stage("Upload Artifacts"){
             steps {
